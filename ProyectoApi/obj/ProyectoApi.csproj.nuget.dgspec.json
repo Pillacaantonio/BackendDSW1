@@ -1,31 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {}
+    "G:\\Proyectos\\ProyectoDSW\\Backend\\ProyectoApi\\ProyectoApi.csproj": {}
   },
   "projects": {
-    "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {
+    "G:\\Proyectos\\ProyectoDSW\\Backend\\ProyectoApi\\ProyectoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
+        "projectUniqueName": "G:\\Proyectos\\ProyectoDSW\\Backend\\ProyectoApi\\ProyectoApi.csproj",
         "projectName": "ProyectoApi",
-        "projectPath": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
-        "packagesPath": "C:\\Users\\JOSE\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\obj\\",
+        "projectPath": "G:\\Proyectos\\ProyectoDSW\\Backend\\ProyectoApi\\ProyectoApi.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "G:\\Proyectos\\ProyectoDSW\\Backend\\ProyectoApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JOSE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -37,11 +38,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
