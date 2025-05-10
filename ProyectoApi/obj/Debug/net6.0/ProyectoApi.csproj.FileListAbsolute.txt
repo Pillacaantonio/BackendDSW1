@@ -402,3 +402,4 @@ C:\Cibertec\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\refint\Proyecto
 C:\Cibertec\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ProyectoApi.pdb
 C:\Cibertec\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ProyectoApi.genruntimeconfig.cache
 C:\Cibertec\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ref\ProyectoApi.dll
+D:\PROYECTOS_06\PROYECTO DSW1\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ProyectoApi.sourcelink.json
