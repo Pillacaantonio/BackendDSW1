@@ -27,7 +27,7 @@ namespace ProyectoApi.Repositories
             parameters.Add("Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
             parameters.Add("Descripcion", request.Descripcion, DbType.String, ParameterDirection.Input);
             parameters.Add("Precio", request.Precio, DbType.Decimal, ParameterDirection.Input);
-            parameters.Add("Stock", request.Stock, DbType.Int32, ParameterDirection.Input);
+            parameters.Add("Stock", request.Cantidad, DbType.Int32, ParameterDirection.Input);
   
 
             var resultado = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
@@ -62,7 +62,6 @@ namespace ProyectoApi.Repositories
         public async Task<string> Update(int id_producto, ProductoRequest request)
         {
             var sp = "USP_UPDATE_PRODUCTO";   
-
             var parameters = new DynamicParameters();
 
              parameters.Add("@IdProducto", id_producto, DbType.Int32, ParameterDirection.Input); 
@@ -71,7 +70,7 @@ namespace ProyectoApi.Repositories
             parameters.Add("@Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
             parameters.Add("@Descripcion", request.Descripcion, DbType.String, ParameterDirection.Input);
             parameters.Add("@Precio", request.Precio, DbType.Decimal, ParameterDirection.Input);
-            parameters.Add("@Stock", request.Stock, DbType.Int32, ParameterDirection.Input);
+            parameters.Add("@Stock", request.Cantidad, DbType.Int32, ParameterDirection.Input);
  
             // Ejecutar el procedimiento almacenado
             var resultado = await _executor.ExecuteCommand(conexion =>

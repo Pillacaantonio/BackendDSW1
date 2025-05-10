@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Microsoft.Data.SqlClient;
 using ProyectoApi.Helpers;
 using ProyectoApi.Models.Queries;
 using ProyectoApi.Models.Request;
@@ -19,30 +18,27 @@ namespace ProyectoApi.Repositories
         }
         public async Task<string> CrearCliente(ClienteRequest request)
         {
+            var sp = "USP_INSERT_CLIENTE";
 
-            try
-            {
-                var sp = "USP_INSERT_CLIENTE";
-                var parameters = new DynamicParameters();
+            var parameters = new DynamicParameters();
 
-                parameters.Add("Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
-                parameters.Add("Apellido", request.Apellido, DbType.String, ParameterDirection.Input);
-                parameters.Add("DocumentoIdentidad", request.DocumentoIdentidad, DbType.String, ParameterDirection.Input);
-                parameters.Add("Direccion", request.Direccion, DbType.String, ParameterDirection.Input);
-                parameters.Add("Telefono", request.Telefono, DbType.String, ParameterDirection.Input);
-                parameters.Add("Email", request.Email, DbType.String, ParameterDirection.Input);
+           // parameters.Add("IdVendedor", DbType.Int32, direction: ParameterDirection.Output);
 
-                var resultado = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
+            //Enviamos lo demás
+            parameters.Add("Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
+            parameters.Add("Apellido", request.Apellido, DbType.String, ParameterDirection.Input);
+            parameters.Add("DocumentoIdentidad", request.DocumentoIdentidad, DbType.String, ParameterDirection.Input);
+            parameters.Add("Direccion", request.Direccion, DbType.String, ParameterDirection.Input);
+            parameters.Add("Telefono", request.Telefono, DbType.String, ParameterDirection.Input);
+            parameters.Add("Email", request.Email, DbType.String, ParameterDirection.Input);
+ 
 
-                return $"Se ha registrado {resultado}";
-            }
-            catch (Exception ex)
-            {
-                 return $"Ocurrió un error: {ex.Message}";
-            }
+            var resultado = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
+
+            //var idGenerado = parameters.Get<int>("IdVendedor");
+
+            return $"Se ha registrado {resultado}  ";
         }
-
-      
 
         public async Task<ClienteOneResponse> GetOneCliente(int id_cliente)
         {
@@ -54,16 +50,6 @@ namespace ProyectoApi.Repositories
             var result = await _executor.ExecuteCommand(conexion => conexion.QuerySingleAsync<ClienteOneResponse>(sp, parameters));
 
             return result;
-        }
-
-        public async Task<IEnumerable<ClienteResponse>> ListadoClientes()
-        {
-            var sp = "SP_SEARCH_ALL_CLIENTE";
-            var parameters = new DynamicParameters(); 
-
-            var listado = await _executor.ExecuteCommand(conexion => conexion.QueryAsync<ClienteResponse>(sp, parameters));
-
-            return listado;
         }
 
         public async  Task<IEnumerable<ClienteResponse>> SearchClientes(ClienteQuery query)
@@ -80,56 +66,24 @@ namespace ProyectoApi.Repositories
 
         public async Task<string> Update(int id_cliente, ClienteRequest request)
         {
-            try
-            {
-                var sp = "USP_UPDATE_CLIENTE";
-                var parameters = new DynamicParameters();
-                parameters.Add("id_cliente", id_cliente, DbType.Int32, direction: ParameterDirection.Input);
-                parameters.Add("Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
-                parameters.Add("Apellido", request.Apellido, DbType.String, ParameterDirection.Input);
-                parameters.Add("DocumentoIdentidad", request.DocumentoIdentidad, DbType.String, ParameterDirection.Input);
-                parameters.Add("Direccion", request.Direccion, DbType.String, ParameterDirection.Input);
-                parameters.Add("Telefono", request.Telefono, DbType.String, ParameterDirection.Input);
-                parameters.Add("Email", request.Email, DbType.String, ParameterDirection.Input);
-                parameters.Add("FechaRegistro", request.FechaRegistro, DbType.DateTime, ParameterDirection.Input);
-                parameters.Add("Estado", request.Etado, DbType.Boolean, ParameterDirection.Input);
+            var sp = "USP_UPDATE_CLIENTE";
 
+            var parameters = new DynamicParameters();
 
-                var resultado = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
+            parameters.Add("id_cliente", id_cliente, DbType.Int32, direction: ParameterDirection.Input);
 
-                return $"Se ha actualizado correctamente el cliente con código {id_cliente}";
-            }
-            catch (SqlException ex)
-            {
-                 return  ($"Error al actualizar el cliente: {ex.Message}");
-            }
+            //Enviamos lo demás
+            parameters.Add("Nombre", request.Nombre, DbType.String, ParameterDirection.Input);
+            parameters.Add("Apellido", request.Apellido, DbType.String, ParameterDirection.Input);
+            parameters.Add("DocumentoIdentidad", request.DocumentoIdentidad, DbType.String, ParameterDirection.Input);
+            parameters.Add("Direccion", request.Direccion, DbType.String, ParameterDirection.Input);
+            parameters.Add("Telefono", request.Telefono, DbType.String, ParameterDirection.Input);
+            parameters.Add("Email", request.Email, DbType.String, ParameterDirection.Input);
+            parameters.Add("FechaRegistro", request.FechaRegistro, DbType.DateTime, ParameterDirection.Input);
+
+            var resultado = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
+
+            return $"Se ha actualizado {resultado} vendedor con código {id_cliente}";
         }
-        public async Task<string> EliminarCliente(int id_cliente)
-        {
-            try
-            {
-                var sp = "USP_ELIMINAR_CLIENTE"; 
-
-                var parameters = new DynamicParameters();
-                parameters.Add("id_cliente", id_cliente, DbType.Int32, ParameterDirection.Input);
-
-                var result = await _executor.ExecuteCommand(conexion => conexion.ExecuteAsync(sp, parameters));
-
-                if (result > 0)
-                {
-                    return "OK";   
-                }
-                else
-                {
-                    return "Error al eliminar el cliente";   
-                }
-            }
-            catch (Exception ex)
-            {
-                return $"Error: {ex.Message}";
-            }
-
-        }
-
     }
 }

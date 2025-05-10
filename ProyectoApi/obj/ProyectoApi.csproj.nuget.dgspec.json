@@ -1,30 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {}
+    "C:\\Cibertec\\ProyectoApi\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {}
   },
   "projects": {
-    "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {
+    "C:\\Cibertec\\ProyectoApi\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
+        "projectUniqueName": "C:\\Cibertec\\ProyectoApi\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
         "projectName": "ProyectoApi",
-        "projectPath": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
-        "packagesPath": "C:\\Users\\JOSE\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTOS_06\\PROYECTO DSW1\\ProyectoApi\\ProyectoApi\\obj\\",
+        "projectPath": "C:\\Cibertec\\ProyectoApi\\ProyectoApi\\ProyectoApi\\ProyectoApi.csproj",
+        "packagesPath": "C:\\Users\\erosg\\.nuget\\packages\\",
+        "outputPath": "C:\\Cibertec\\ProyectoApi\\ProyectoApi\\ProyectoApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JOSE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Users\\erosg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -51,10 +53,6 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
-            },
-            "Microsoft.AspNet.WebApi.Cors": {
-              "target": "Package",
-              "version": "[5.3.0, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -88,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

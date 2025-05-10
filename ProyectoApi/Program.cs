@@ -13,23 +13,14 @@ builder.Services.AddScoped<IDatabaseExecutor>(provider =>
 
 builder.Services.AddScoped<IClienteRepository,ClienteRepository>();
 builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
- 
+builder.Services.AddScoped<IFacturaRepository, FacturaRepository>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//var app = builder.Build();
-builder.Services.AddCors(option =>
-{
-    option.AddPolicy("HabilitarCors", builder =>
-    {
-        builder.AllowAnyOrigin()
-        .AllowAnyHeader()
-        .AllowAnyMethod();
-    });
-});
-var app =builder.Build();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -39,9 +30,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-//activando politica
-app.UseCors("HabilitarCors");
 
 app.UseAuthorization();
 
